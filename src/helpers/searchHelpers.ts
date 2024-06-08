@@ -5,7 +5,7 @@ export const filterCoins = (
   searchParam: string
 ): CoinResult[] => {
   return coins.filter((coin) =>
-    coin.name.toLowerCase().includes(searchParam.toLowerCase())
+    coin.name.toLowerCase().startsWith(searchParam.toLowerCase())
   );
 };
 // використовується для показу усіх монет

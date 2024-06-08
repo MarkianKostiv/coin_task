@@ -94,33 +94,35 @@ export const SearchBar = () => {
 
   return (
     <div className='search-btn-container'>
-      <button
-        className='search-open-btn'
-        onClick={searchModal}
-      >
-        <CodiconSearch className='icon' />
-        Search
-      </button>
-      <div
-        className={`search-modal ${openCloseSearch ? "" : "display-none"}`}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <SearchInput
-          searchValue={searchValue}
-          handleSearchChange={handleSearchChange}
-          clearSearchInput={clearSearchInput}
-        />
-        <ControlButtons
-          displayMode={displayMode}
-          handleShowAllCoins={handleShowAllCoins}
-          handleShowFavorites={handleShowFavorites}
-        />
-        {error && <div className='error-message'>{error}</div>}
-        <ResultsList
-          results={filteredResults}
-          onResultClick={handleResultClick}
-          favorites={favorites}
-        />
+      <div className='search-modal-container'>
+        <button
+          className='search-open-btn'
+          onClick={searchModal}
+        >
+          <CodiconSearch className='icon' />
+          Search
+        </button>
+        <div
+          className={`search-modal ${openCloseSearch ? "" : "display-none"}`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <SearchInput
+            searchValue={searchValue}
+            handleSearchChange={handleSearchChange}
+            clearSearchInput={clearSearchInput}
+          />
+          <ControlButtons
+            displayMode={displayMode}
+            handleShowAllCoins={handleShowAllCoins}
+            handleShowFavorites={handleShowFavorites}
+          />
+          {error && <div className='error-message'>{error}</div>}
+          <ResultsList
+            results={filteredResults}
+            onResultClick={handleResultClick}
+            favorites={favorites}
+          />
+        </div>
       </div>
     </div>
   );
