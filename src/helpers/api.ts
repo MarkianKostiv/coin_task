@@ -1,5 +1,5 @@
 import { CoinResult } from "../interfaces/SearchBarInterfaces/CoinResult";
-
+// Запит до api
 export const fetchCoins = async (): Promise<CoinResult[]> => {
   try {
     const response = await fetch(`https://api-eu.okotoki.com/coins`);
